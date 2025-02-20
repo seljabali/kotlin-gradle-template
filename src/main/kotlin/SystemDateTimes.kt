@@ -3,7 +3,7 @@ package org.eljabali.sami
 import kotlinx.datetime.*
 import java.time.DayOfWeek.*
 
-object SystemTimeZoneDateTimes {
+object SystemDateTimes {
     val now: LocalDateTime get() = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
     val today: LocalDateTime get() = now.atStartOfDay()
     val yesterday: LocalDateTime get() = today.minusDays(1)
