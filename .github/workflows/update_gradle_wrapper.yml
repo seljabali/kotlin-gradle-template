@@ -5,7 +5,8 @@ on:
         - cron: "* * * * *"
 
 permissions:
-    contents: write        
+  contents: write
+  pull-requests: write
 
 jobs:
     update:
