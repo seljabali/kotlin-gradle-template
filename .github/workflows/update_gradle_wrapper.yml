@@ -1,38 +1,15 @@
-name: Gradle wrapper update
+name: Update Gradle Wrapper
 
 on:
-    schedule:
-        - cron: "0 0 * * *"
-
-permissions:
-  contents: write
-  pull-requests: write
-  issues: write
+  schedule:
+    - cron: "* * * * *"
 
 jobs:
-    update:
-        runs-on: ubuntu-latest
-        timeout-minutes: 15
-  
-        steps:
-            - uses: actions/checkout@v4
-            - name: set up JDK 21
-              uses: actions/setup-java@v4
-              with:
-                  java-version: 21
-                  distribution: corretto
+  update-gradle-wrapper:
+    runs-on: ubuntu-latest
 
-            - name: update gradle
-              id: gradleUpdate
-              uses: EdwarDDay/upgrade-gradle-action@v1
+    steps:
+      - uses: actions/checkout@v4
 
-            - name: create pull request
-              uses: peter-evans/create-pull-request@v7
-              with:
-                  commit-message: "Bump gradle to ${{ steps.gradleUpdate.outputs.gradle-version }}"
-                  branch: "gradle_update/version_${{ steps.gradleUpdate.outputs.gradle-version }}"
-                  delete-branch: true
-                  title: "Bump gradle to ${{ steps.gradleUpdate.outputs.gradle-version }}"
-                  body: |
-                      ${{ steps.gradleUpdate.outputs.version-information }}
-                  labels: "dependencies,gradle"
+      - name: Update Gradle Wrapper
+        uses: gradle-update/update-gradle-wrapper-action@v2
