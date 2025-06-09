@@ -1,0 +1,14 @@
+[versions]
+kotlin = "2.1.21"
+coroutines = "1.7.3"
+ktor = "2.3.1"
+kotlinx-datetime = "0.6.2"
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

@@ -1,16 +1,18 @@
 plugins {
-    kotlin("jvm") version "2.1.21"
+    alias(libs.plugins.kotlin)
 }
+val jvmVersion = 23
 
 group = "org.eljabali.sami"
-version = "1.0-SNAPSHOT"
+version = "0.0.1"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.2")
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlinx.datetime)
     testImplementation(kotlin("test"))
 }
 
@@ -18,5 +20,5 @@ tasks.test {
     useJUnitPlatform()
 }
 kotlin {
-    jvmToolchain(23)
+    jvmToolchain(jvmVersion)
 }
