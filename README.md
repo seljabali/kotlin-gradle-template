@@ -7,3 +7,7 @@ Kotlin project template using **Gradle with Kotlin DSL**, configured with:
   - Dependabot
   - CI build on push and PR
   - Auto-updates for the Gradle wrapper
+- .Github
+  - Codeowners
+  - PR Template
+  - Release autogen config
