@@ -1,5 +1,28 @@
-# Compiled class file
+# ========================
+# Gradle
+# ========================
+.gradle/
+build/
+*/build/
+**/build/
+
+# ========================
+# IntelliJ IDEA
+# ========================
+.idea/
+*.iml
+*.iws
+out/
+.fleet
+
+# ========================
+# Kotlin/Java build artifacts
+# ========================
 *.class
+*.jar
+*.war
+*.ear
+.kotlin
 
 # Log file
 *.log
@@ -23,12 +46,7 @@
 hs_err_pid*
 replay_pid*
 
-# Kotlin Gradle plugin data, see https://kotlinlang.org/docs/whatsnew20.html#new-directory-for-kotlin-data-in-gradle-projects
-.kotlin/
-
-*.iml
-.fleet
-.gradle
-**/build/
-.idea
+# ========================
+# macOS
+# ========================
 .DS_Store
