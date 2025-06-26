@@ -12,7 +12,6 @@ repositories {
 
 dependencies {
     implementation(libs.kotlin.stdlib)
-    implementation(libs.kotlinx.datetime)
     testImplementation(kotlin("test"))
 }
 
