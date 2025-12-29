@@ -21,4 +21,4 @@ assignees: ''
 
 
 **Screenshots**
-<img src="" width="350" data-canonical-src=""/>
+<img width="350" src=""/>
