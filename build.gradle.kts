@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.kotlin)
 }
-val jvmVersion = 23
+val jvmVersion = 25
 
 group = "org.eljabali.sami"
 version = "0.0.1"
