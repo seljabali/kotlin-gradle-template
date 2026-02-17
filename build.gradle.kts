@@ -1,7 +1,9 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmDefaultMode.NO_COMPATIBILITY
+
 plugins {
     alias(libs.plugins.kotlin)
 }
-val jvmVersion = 25
+val javaVersion: Int = libs.versions.java.get().toInt()
 
 group = "org.eljabali.sami"
 version = "0.0.1"
@@ -20,5 +22,29 @@ tasks.test {
     useJUnitPlatform()
 }
 kotlin {
-    jvmToolchain(jvmVersion)
+    jvmToolchain(javaVersion)
+    compilerOptions {
+        allWarningsAsErrors.set(false)
+
+        jvmDefault = NO_COMPATIBILITY
+
+        progressiveMode.set(true)
+
+        freeCompilerArgs.addAll(
+            "-Xjsr305=strict",
+            "-Xannotation-default-target=param-property",
+            "-Xcontext-sensitive-resolution",
+            "-Xtype-enhancement-improvements-strict-mode",
+            "-Xjvm-default=all",
+        )
+        optIn.addAll(
+            "kotlin.ExperimentalStdlibApi",
+            "kotlin.io.encoding.ExperimentalEncodingApi",
+            "kotlin.RequiresOptIn",
+            "kotlin.time.ExperimentalTime",
+            "kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "kotlinx.coroutines.FlowPreview",
+            "kotlinx.serialization.ExperimentalSerializationApi"
+        )
+    }
 }
